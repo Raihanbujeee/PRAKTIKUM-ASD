@@ -40,5 +40,5 @@ public class Mahasiswa24 {
             this.nim=nim;
             this.ipk=ipk;
             kelas=kls;
-    }
+     }
 }
