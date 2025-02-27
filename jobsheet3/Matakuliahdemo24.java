@@ -4,35 +4,22 @@ import java.util.Scanner;
 public class Matakuliahdemo24 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Matakuliah24[] arrayOfMatakuliah = new Matakuliah24[3];
-        String kode, nama, dummy;
-        int sks, jumlahJam;
 
-        for(int i = 0; i < 3; i++) {
-            System.out.println("Masukkan Data Matakuliah ke-" + (i + 1));
-            System.out.print("Kode      : ");
-            kode = sc.nextLine();
-            System.out.print("Nama      : ");
-            nama = sc.nextLine();
-            System.out.print("Sks       : ");
-            dummy = sc.nextLine();
-            sks = Integer.parseInt(dummy);
-            System.out.print("Jumlah Jam: ");
-            dummy = sc.nextLine();
-            jumlahJam = Integer.parseInt(dummy);
-            System.out.println("--------------------------------");
-
-            arrayOfMatakuliah[i] = new Matakuliah24(kode, nama, sks, jumlahJam);
+       
+        System.out.print("Masukkan jumlah matakuliah: ");
+        int jumlahMatkul = sc.nextInt();
+        sc.nextLine(); 
+        Matakuliah24[] arrayOfMatakuliah = new Matakuliah24[jumlahMatkul];
+        for (int i = 0; i < jumlahMatkul; i++) {
+            System.out.println("\nMasukkan Data Matakuliah ke-" + (i + 1));
+            arrayOfMatakuliah[i] = new Matakuliah24();
+            arrayOfMatakuliah[i].tambahData();
         }
 
         System.out.println("\nData Matakuliah yang telah dimasukkan:");
-        for(int i = 0; i < 3; i++) {
-            System.out.println("Data Matakuliah ke-" + (i + 1));
-            System.out.println("Kode      : " + arrayOfMatakuliah[i].kode);
-            System.out.println("Nama      : " + arrayOfMatakuliah[i].nama);
-            System.out.println("Sks       : " + arrayOfMatakuliah[i].sks);
-            System.out.println("Jumlah Jam: " + arrayOfMatakuliah[i].jumlahJam);
-            System.out.println("--------------------------------");
+        for (int i = 0; i < jumlahMatkul; i++) {
+            System.out.println("\nMatakuliah ke-" + (i + 1));
+            arrayOfMatakuliah[i].cetakInfo();
         }
     }
 }
