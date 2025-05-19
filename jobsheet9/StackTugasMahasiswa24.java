@@ -53,4 +53,32 @@ public class StackTugasMahasiswa24 {
         }
         System.out.println("");
     }
+    Mahasiswa24 peekBottom(){
+        if (!isempty()) {
+            return stack[0];
+        }else{
+            System.out.println("Stack kosong! Tidak ada tugas yang dikumpulkan");
+            return null;
+        }
+    }
+    int jumlahTugas(){
+        if (!isempty()) {
+            return top + 1;
+        }else{
+            return 0;
+        }
+    }
+    String konversiDesimalKeBiner(int nilai){
+        StackKonversi24 stack = new StackKonversi24();
+        while (nilai >0){
+            int sisa = nilai % 2;
+            stack.push(sisa);
+            nilai /= 2;
+        }
+        String biner = new String();
+        while (!stack.isEmpty()){
+            biner += stack.pop();
+        }
+        return biner;
+    }
 }
